@@ -1,0 +1,121 @@
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perkenalan Diri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007bff;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Halaman Saya</h1>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>ARDIAN SYAH FAJAR RAMADHAN </p>
+            <p>Usia: TEBAK SENSIDI </p>
+            <p>Pekerjaan: FREELANCE </p>
+            <p>Hobi: MEMANCING, NGEGAME </p>
+            <button id="showMore">Tampilkan Lebih Banyak</button>
+            <div id="moreInfo" style="display: none;">
+                <p>Saya suka belajar hal-hal baru dan berkolaborasi dengan orang lain.</p>
+                <p>Jika kamu ingin menghubungi saya, silakan kirim email ke: ardiansyahfajarramadhana@gmail.com</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Kontak Saya</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nama" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Pesan" rows="4" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+            <p id="responseMessage" style="display: none;"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ARDIAN SYAH FAJAR RAMADHAN. Semua hak dilindungi.</p>
+    </footer>
+    <script>
+        document.getElementById("showMore").addEventListener("click", function() {
+            const moreInfo = document.getElementById("moreInfo");
+            if (moreInfo.style.display === "none") {
+                moreInfo.style.display = "block";
+                this.innerText = "Tampilkan Lebih Sedikit";
+            } else {
+                moreInfo.style.display = "none";
+                this.innerText = "Tampilkan Lebih Banyak";
+            }
+        });
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Simulasi pengiriman pesan
+            document.getElementById("responseMessage").innerText = `Terima kasih, ${name}! Pesan Anda telah terkirim.`;
+            document.getElementById("responseMessage").style.display = "block";
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
