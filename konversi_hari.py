@@ -22,3 +22,5 @@ def konversi_hari(total_hari):
 # Bagian utama program (main program)
 total_hari = int(input("Masukkan jumlah hari: "))
 konversi_hari(total_hari)
+skjdklajsdlk
+slkdlsd
